@@ -137,7 +137,7 @@ class InvoiceController extends AppController
                 INNER JOIN invoice_item it ON it.invoice_id = i.id
                 INNER JOIN customer c ON c.id = i.customer_id
                 INNER JOIN product p ON p.id = it.product_id
-                WHERE i.id = 1;
+                WHERE i.id = $id;
             ";
 
         $data = $db->execute($sql)->fetchAll('assoc');
@@ -189,8 +189,6 @@ class InvoiceController extends AppController
         $total = $subtotal + $tax_due;
 
         array_push($results, $all_products, $subtotal, $taxable, $tax_rate, $tax_due, $total);
-
-        print_r($results[1]);
 
         $this->set(['results'=>$results]);
     }
