@@ -1,3 +1,5 @@
+CREATEs database invoice;
+
 CREATE TABLE customer (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -35,8 +37,7 @@ VALUES (
     'Johanessburg',
     '42 Harley Stureet'
     );
-    
-   
+
    
 CREATE TABLE product (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -77,9 +78,6 @@ VALUES (
     True
     );
 
-
-
-
 CREATE TABLE invoice (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id INT UNSIGNED,
@@ -95,8 +93,6 @@ VALUES (
     1,
     now()
     );
-
-
 
 CREATE TABLE invoice_item (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
